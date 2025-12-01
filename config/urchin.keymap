@@ -195,10 +195,9 @@
         };
 
         system_tog {
-            bindings = <&mo 10>;
-            key-positions = <30 31>;
+            bindings = <&tog 10>;
+            key-positions = <0 10 20>;
             require-prior-idle-ms = <250>;
-            layers = <0 10>;
         };
 
         reset_base {
@@ -255,6 +254,11 @@
             bindings = <&kp TAB>;
             key-positions = <15 16>;
             timeout-ms = <50>;
+        };
+
+        sys2 {
+            bindings = <&tog 10>;
+            key-positions = <9 19 29>;
         };
     };
 
