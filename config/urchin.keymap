@@ -79,7 +79,7 @@
         tap_left: tap_left {
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_LEFT";
-            bindings = <&mo>, <&none>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
@@ -196,8 +196,9 @@
 
         system_tog {
             bindings = <&tog 10>;
-            key-positions = <0 10 20>;
+            key-positions = <1 11 21>;
             require-prior-idle-ms = <250>;
+            layers = <0 10>;
         };
 
         reset_base {
@@ -258,21 +259,15 @@
 
         sys2 {
             bindings = <&tog 10>;
-            key-positions = <9 19 29>;
+            key-positions = <8 18 28>;
+            layers = <0 10>;
         };
 
         failsafe {
             bindings = <&studio_unlock>;
-            key-positions = <6 7 8 9>;
+            key-positions = <9 19 29>;
             layers = <0>;
             require-prior-idle-ms = <300>;
-        };
-
-        boot2 {
-            bindings = <&bootloader>;
-            key-positions = <5 6 7 8 9>;
-            require-prior-idle-ms = <300>;
-            layers = <0>;
         };
     };
 
@@ -285,7 +280,7 @@
             label = "base";
             bindings = <
 &kp Q  &kp W          &kp E          &kp R           &kp T  &kp Y        &kp U      &kp I      &kp O    &kp P
-&kp A  &tap_left 1 0  &tap_left 2 0  &tap_left 7 0   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
+&kp A  &tap_left 1 S  &tap_left 2 D  &tap_left 7 F   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
 &kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M      &kp COMMA  &kp DOT  &kp ENTER
                                      &sk LEFT_SHIFT  &mo 3  &lt 4 ENTER  &kp SPACE
             >;
