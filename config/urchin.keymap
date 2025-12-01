@@ -29,6 +29,11 @@
     lazy;
 };
 
+&mmv {
+    x-input-code = <75>;
+    y-input-code = <75>;
+};
+
 / {
     behaviors {
         // Enables holding the first mod-tap key
@@ -78,7 +83,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
-            require-prior-idle-ms = <50>;
+            require-prior-idle-ms = <80>;
             flavor = "balanced";
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
             hold-trigger-on-release;
@@ -120,6 +125,13 @@
             require-prior-idle-ms = <80>;
             flavor = "balanced";
             hold-trigger-on-release;
+        };
+
+        Soft_off: Soft_off {
+            compatible = "zmk,behavior-soft-off";
+            label = "SOFT_OFF";
+            #binding-cells = <0>;
+            hold-time-ms = <3000>;
         };
     };
 
@@ -183,7 +195,7 @@
         };
 
         system_tog {
-            bindings = <&mo 0>;
+            bindings = <&mo 10>;
             key-positions = <30 31>;
             require-prior-idle-ms = <250>;
             layers = <0 10>;
@@ -212,7 +224,7 @@
 
         mouse_tog {
             bindings = <&tog 8>;
-            key-positions = <23 22>;
+            key-positions = <23 22 21>;
             layers = <0 8>;
             timeout-ms = <80>;
             require-prior-idle-ms = <200>;
@@ -254,10 +266,10 @@
         Base {
             label = "base";
             bindings = <
-&kp Q  &kp W    &kp E    &kp R                 &kp T  &kp Y  &kp U                 &kp I      &kp O    &kp P
-&kp A  &lt 1 S  &lt 2 D  &lt 7 F               &kp G  &kp H  &kp J                 &kp K      &kp L    &kp BACKSPACE
-&kp Z  &kp X    &kp C    &kp V                 &kp B  &kp N  &kp M                 &kp COMMA  &kp DOT  &kp ENTER
-                         &qt LEFT_SHIFT ENTER  &mo 3  &mo 4  &qt LEFT_SHIFT SPACE
+&kp Q  &kp W          &kp E          &kp R           &kp T  &kp Y        &kp U      &kp I      &kp O    &kp P
+&kp A  &tap_left 1 0  &tap_left 2 0  &tap_left 7 0   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
+&kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M      &kp COMMA  &kp DOT  &kp ENTER
+                                     &sk LEFT_SHIFT  &mo 3  &lt 4 ENTER  &kp SPACE
             >;
         };
 
