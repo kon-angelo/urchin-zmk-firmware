@@ -280,7 +280,7 @@
             label = "base";
             bindings = <
 &kp Q  &kp W          &kp E          &kp R           &kp T  &kp Y        &kp U      &kp I      &kp O    &kp P
-&kp A  &tap_left 1 S  &tap_left 2 D  &tap_left 7 F   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
+&kp A  &tap_left 2 S  &tap_left 1 D  &tap_left 7 F   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
 &kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M      &kp COMMA  &kp DOT  &kp ENTER
                                      &sk LEFT_SHIFT  &mo 3  &lt 4 ENTER  &kp SPACE
             >;
@@ -288,7 +288,7 @@
 
         Master {
             bindings = <
-&none  &none  &none  &none                 &none                     &none  &none      &kp ESCAPE     &none          &none
+&none  &none  &none  &none                 &none                     &none  &kp LG(Z)  &kp ESCAPE     &kp LS(LG(Z))  &none
 &none  &none  &none  &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &none  &kp ENTER  &kp BACKSPACE  &kp TAB        &none
 &none  &none  &none  &kp LS(LG(SPACE))     &kp LG(J)                 &none  &none      &kp DELETE     &kp LG(ENTER)  &none
                      &none                 &none                     &none  &none
