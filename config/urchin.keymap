@@ -275,14 +275,14 @@
 
         master_tog {
             bindings = <&tog 1>;
-            key-positions = <12 31>;
+            key-positions = <12 31 11>;
             require-prior-idle-ms = <280>;
             layers = <0 1>;
         };
 
         nav_tog {
             bindings = <&tog 7>;
-            key-positions = <13 2>;
+            key-positions = <2 3 31>;
             require-prior-idle-ms = <280>;
             layers = <0 7>;
         };
