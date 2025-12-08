@@ -107,7 +107,7 @@
             tapping-term-ms = <180>;
             require-prior-idle-ms = <80>;
             flavor = "balanced";
-            hold-trigger-key-positions = <16 17 7 18 28 27>;
+            hold-trigger-key-positions = <16 17 7 18 28 27 26 6 8>;
             hold-trigger-on-release;
         };
 
@@ -121,13 +121,6 @@
             require-prior-idle-ms = <80>;
             flavor = "balanced";
             hold-trigger-on-release;
-        };
-
-        Soft_off: Soft_off {
-            compatible = "zmk,behavior-soft-off";
-            label = "SOFT_OFF";
-            #binding-cells = <0>;
-            hold-time-ms = <3000>;
         };
     };
 
@@ -190,14 +183,14 @@
             bindings = <&kp ENTER>;
             key-positions = <6 7>;
             require-prior-idle-ms = <280>;
-            timeout-ms = <30>;
+            timeout-ms = <50>;
         };
 
         system_tog {
-            bindings = <&tog 10>;
+            bindings = <&tog 11>;
             key-positions = <1 11 21>;
             require-prior-idle-ms = <250>;
-            layers = <0 10>;
+            layers = <0 11>;
         };
 
         reset_base {
@@ -248,7 +241,7 @@
         num_tap {
             bindings = <&mo 5>;
             key-positions = <1 2>;
-            timeout-ms = <30>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
             layers = <0>;
         };
@@ -256,14 +249,14 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <15 16>;
-            timeout-ms = <30>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <150>;
         };
 
         sys2 {
-            bindings = <&tog 10>;
+            bindings = <&tog 11>;
             key-positions = <8 18 28>;
-            layers = <0 10>;
+            layers = <0 11>;
         };
 
         failsafe {
@@ -274,17 +267,25 @@
         };
 
         master_tog {
-            bindings = <&tog 1>;
+            bindings = <&tog 3>;
             key-positions = <12 31 11>;
             require-prior-idle-ms = <280>;
-            layers = <0 1>;
+            layers = <0 3>;
         };
 
         nav_tog {
             bindings = <&tog 7>;
-            key-positions = <2 3 31>;
+            key-positions = <2 3 1>;
             require-prior-idle-ms = <280>;
             layers = <0 7>;
+        };
+
+        mouse {
+            bindings = <&mo 8>;
+            key-positions = <23 22>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <280>;
+            layers = <0>;
         };
     };
 
@@ -297,32 +298,10 @@
             label = "base";
             bindings = <
 &kp Q  &kp W          &kp E          &kp R           &kp T  &kp Y        &kp U      &kp I      &kp O    &kp P
-&kp A  &tap_left 2 S  &tap_left 1 D  &tap_left 7 F   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
-&kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M      &kp COMMA  &kp DOT  &kp ENTER
-                                     &sk LEFT_SHIFT  &mo 3  &lt 4 ENTER  &kp SPACE
+&kp A  &tap_left 4 S  &tap_left 3 D  &tap_left 7 F   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
+&kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M      &kp COMMA  &kp DOT  &kp RIGHT_SHIFT
+                                     &sk LEFT_SHIFT  &mo 1  &lt 2 ENTER  &kp SPACE
             >;
-        };
-
-        Master {
-            bindings = <
-&none  &none  &none  &kp LG(MINUS)         &kp LG(EQUAL)             &none          &kp LG(Z)          &kp LC(LEFT_BRACKET)  &kp LS(LG(Z))  &none
-&none  &none  &none  &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)  &kp ENTER          &kp BACKSPACE         &kp TAB        &none
-&none  &none  &none  &kp LS(LG(SPACE))     &kp LG(J)                 &none          &kp LA(BACKSPACE)  &kp DELETE            &kp LG(ENTER)  &none
-                     &kp LEFT_SHIFT        &kp LEFT_GUI              &none          &none
-            >;
-
-            label = "master";
-        };
-
-        Vi {
-            bindings = <
-&none  &none  &none  &none          &none  &none  &kp LG(Z)              &none       &kp LS(LG(Z))  &none
-&none  &none  &none  &kp LC(SPACE)  &none  &none  &kp LC(RIGHT_BRACKET)  &kp LC(I)   &kp LC(O)      &none
-&none  &none  &none  &none          &none  &none  &none                  &kp LS(F6)  &none          &none
-                     &none          &none  &none  &none
-            >;
-
-            label = "vi";
         };
 
         sym_layer {
@@ -345,12 +324,34 @@
             >;
         };
 
+        Master {
+            bindings = <
+&none  &none          &none  &kp LG(MINUS)         &kp LG(EQUAL)             &none          &kp LG(Z)          &kp LC(LEFT_BRACKET)  &kp LS(LG(Z))  &none
+&none  &kp LG(SPACE)  &none  &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)  &kp ENTER          &kp BACKSPACE         &kp TAB        &none
+&none  &none          &none  &kp LS(LG(SPACE))     &kp LG(J)                 &none          &kp LA(BACKSPACE)  &kp DELETE            &kp LG(ENTER)  &none
+                             &kp LEFT_SHIFT        &kp LEFT_GUI              &kp LALT       &kp LCTRL
+            >;
+
+            label = "master";
+        };
+
+        Vi {
+            bindings = <
+&none  &none  &none  &none          &none  &sk DOUBLE_QUOTES  &kp LG(Z)              &kp LC(T)   &kp LS(LG(Z))  &none
+&none  &none  &none  &kp LC(SPACE)  &none  &sk GRAVE          &kp LC(RIGHT_BRACKET)  &kp LC(I)   &kp LC(O)      &none
+&none  &none  &none  &none          &none  &none              &none                  &kp LS(F6)  &none          &none
+                     &none          &none  &none              &none
+            >;
+
+            label = "vi";
+        };
+
         Numpad {
             bindings = <
-&none      &none     &none     &none      &none  &none      &kp N7     &kp N8  &kp N9  &kp N0
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &kp DOT    &kp N4     &kp N5  &kp N6  &kp BSPC
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &kp COMMA  &kp N1     &kp N2  &kp N3  &kp ENTER
-                               &none      &none  &to 0      &spc_to_0
+&none      &none     &none     &none      &none  &none        &kp N7     &kp N8  &kp N9  &kp N0
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &kp DOT      &kp N4     &kp N5  &kp N6  &kp BSPC
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &kp COMMA    &kp N1     &kp N2  &kp N3  &kp ENTER
+                               &none      &none  &enter_to_0  &spc_to_0
             >;
 
             label = "numpad";
@@ -368,9 +369,9 @@
 
         Nav {
             bindings = <
-&none      &none     &none     &none           &none           &kp HOME                  &kp PG_DN     &kp PG_UP     &kp END                    &none
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LEFT                  &kp DOWN      &kp UP        &kp RIGHT                  &none
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LS(LG(LEFT_BRACKET))  &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(RIGHT_BRACKET))  &none
+&none      &none     &none     &none           &none           &kp LG(LS(LEFT_BRACKET))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(RIGHT_BRACKET))  &none
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LEFT                  &kp DOWN              &kp UP                 &kp RIGHT                  &none
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp HOME                  &kp PG_DN             &kp PG_UP              &kp END                    &none
                                &kp LEFT_SHIFT  &kp LEFT_SHIFT  &enter_to_0               &to 0
             >;
 
@@ -390,13 +391,22 @@
 
         Media {
             bindings = <
-&none  &none  &none              &none             &none  &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none             &none
-&none  &none  &kp C_AC_ZOOM_OUT  &kp C_AC_ZOOM_IN  &none  &kp C_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_PLAY_PAUSE  &none
-&none  &none  &none              &none             &none  &none       &kp C_PREV            &kp C_NEXT            &none             &none
-                                 &none             &none  &to 0       &to 0
+&none  &none  &none          &none          &none  &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none             &none
+&none  &none  &kp LG(MINUS)  &kp LG(EQUAL)  &none  &kp C_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_PLAY_PAUSE  &none
+&none  &none  &none          &none          &none  &none       &kp C_PREV            &kp C_NEXT            &none             &none
+                             &none          &none  &to 0       &to 0
             >;
 
             label = "media";
+        };
+
+        Mod {
+            bindings = <
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &none  &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL
+&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &none  &none  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL
+&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &none  &none  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL
+                               &none      &none  &none  &none
+            >;
         };
 
         System {
