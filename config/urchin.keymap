@@ -27,7 +27,7 @@
 
     quick-release;
     lazy;
-    release-after-ms = <600>;
+    release-after-ms = <1000>;
 };
 
 / {
@@ -188,10 +188,10 @@
         };
 
         system_tog {
-            bindings = <&tog 11>;
+            bindings = <&tog 12>;
             key-positions = <1 11 21>;
             require-prior-idle-ms = <250>;
-            layers = <0 11>;
+            layers = <0 12>;
         };
 
         reset_base {
@@ -200,47 +200,47 @@
         };
 
         fn_tap {
-            bindings = <&mo 6>;
+            bindings = <&mo 7>;
             key-positions = <3 2>;
-            layers = <0 6>;
+            layers = <0 7>;
             require-prior-idle-ms = <280>;
             timeout-ms = <30>;
         };
 
         fn_tog {
-            bindings = <&tog 6>;
+            bindings = <&tog 7>;
             key-positions = <3 4 2>;
-            layers = <0 6>;
+            layers = <0 7>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
         };
 
         mouse_tog {
-            bindings = <&tog 8>;
+            bindings = <&tog 9>;
             key-positions = <23 22 21>;
-            layers = <0 8>;
+            layers = <0 9>;
             timeout-ms = <80>;
             require-prior-idle-ms = <200>;
         };
 
         media_tog {
-            bindings = <&tog 9>;
+            bindings = <&tog 10>;
             key-positions = <24 23>;
-            layers = <0 9>;
+            layers = <0 10>;
             timeout-ms = <30>;
             require-prior-idle-ms = <280>;
         };
 
         num_tog {
-            bindings = <&tog 5>;
+            bindings = <&tog 6>;
             key-positions = <1 2 3>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 5>;
+            layers = <0 6>;
         };
 
         num_tap {
-            bindings = <&mo 5>;
+            bindings = <&mo 6>;
             key-positions = <1 2>;
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
@@ -255,9 +255,9 @@
         };
 
         sys2 {
-            bindings = <&tog 11>;
+            bindings = <&tog 12>;
             key-positions = <8 18 28>;
-            layers = <0 11>;
+            layers = <0 12>;
         };
 
         failsafe {
@@ -275,18 +275,33 @@
         };
 
         nav_tog {
-            bindings = <&tog 7>;
+            bindings = <&tog 8>;
             key-positions = <2 3 1>;
             require-prior-idle-ms = <280>;
-            layers = <0 7>;
+            layers = <0 8>;
         };
 
         mouse {
-            bindings = <&mo 8>;
+            bindings = <&mo 9>;
             key-positions = <23 22>;
             timeout-ms = <50>;
             require-prior-idle-ms = <280>;
             layers = <0>;
+        };
+
+        backspc {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <7 8>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
+        };
+
+        repeat {
+            bindings = <&key_repeat>;
+            key-positions = <26 27>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
+            layers = <0 1 2 6>;
         };
     };
 
@@ -299,41 +314,51 @@
             label = "base";
             bindings = <
 &kp Q  &kp W          &kp E          &kp R           &kp T  &kp Y        &kp U      &kp I      &kp O    &kp P
-&kp A  &tap_left 4 S  &tap_left 3 D  &tap_left 7 F   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
-&kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M      &kp COMMA  &kp DOT  &key_repeat
-                                     &sk LEFT_SHIFT  &mo 1  &lt 2 ENTER  &kp SPACE
+&kp A  &tap_left 5 S  &tap_left 3 D  &tap_left 8 F   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
+&kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M      &kp COMMA  &kp DOT  &kp LEFT_SHIFT
+                                     &sk LEFT_SHIFT  &mo 1  &lt 3 ENTER  &kp SPACE
             >;
         };
 
         sym_layer {
             label = "sym";
             bindings = <
-&kp N1     &kp N2     &kp N3    &kp N4     &kp N5          &kp N6            &kp N7     &kp N8     &kp N9        &kp N0
-&sk LCTRL  &sk LALT   &sk LGUI  &sk LSHFT  &kp LBKT        &kp RBKT          &sk LSHFT  &sk LGUI   &sk LALT      &sk LCTRL
-&kp BSLH   &kp GRAVE  &kp APOS  &kp FSLH   &kp LESS_THAN   &kp GREATER_THAN  &kp MINUS  &kp EQUAL  &kp LS(SEMI)  &kp BSPC
-                                &trans     &kp LEFT_SHIFT  &kp LEFT_SHIFT    &trans
+&kp N1     &kp N2     &kp N3    &kp N4     &kp N5          &kp N6          &kp N7     &kp N8     &kp N9    &kp N0
+&sk LCTRL  &sk LALT   &sk LGUI  &sk LSHFT  &kp LBKT        &kp RBKT        &kp MINUS  &kp EQUAL  &kp SEMI  &sk BACKSPACE
+&kp BSLH   &kp GRAVE  &kp APOS  &kp FSLH   &kp PIPE        &kp QUESTION    &kp LBKT   &kp RBKT   &kp BSLH  &kp FSLH
+                                &trans     &kp LEFT_SHIFT  &kp LEFT_SHIFT  &trans
             >;
         };
 
         sym_shift {
             label = "sym_shift";
             bindings = <
-&shifted N1    &shifted N2     &shifted N3    &shifted N4    &shifted N5     &shifted N6     &shifted N7     &shifted N8     &shifted N9  &shifted N0
-&kp LCTRL      &kp LALT        &kp LGUI       &kp LSHFT      &shifted LBKT   &shifted RBKT   &kp LSHFT       &kp LGUI        &kp LALT     &kp LCTRL
-&shifted BSLH  &shifted GRAVE  &shifted APOS  &shifted FSLH  &shifted N9     &shifted N0     &shifted MINUS  &shifted EQUAL  &kp SEMI     &shifted BSPC
-                                              &trans         &kp LEFT_SHIFT  &kp LEFT_SHIFT  &trans
+&shifted N1     &shifted N2     &shifted N3    &shifted N4    &shifted N5     &shifted N6     &shifted N7     &shifted N8     &shifted N9  &shifted N0
+&kp LCTRL       &kp LALT        &kp LGUI       &kp LSHFT      &shifted LBKT   &shifted RBKT   &kp LSHFT       &kp LGUI        &kp LALT     &kp LCTRL
+&shifted COMMA  &shifted GRAVE  &shifted APOS  &shifted FSLH  &shifted N9     &shifted N0     &shifted MINUS  &shifted EQUAL  &kp SEMI     &shifted PERIOD
+                                               &trans         &kp LEFT_SHIFT  &kp LEFT_SHIFT  &trans
             >;
         };
 
         Master {
             bindings = <
-&none  &none          &none  &kp LG(MINUS)         &kp LG(EQUAL)             &none          &kp LG(Z)          &kp LC(LEFT_BRACKET)  &kp LS(LG(Z))  &none
-&none  &kp LG(SPACE)  &none  &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)  &kp ENTER          &kp BACKSPACE         &kp TAB        &none
-&none  &none          &none  &kp LS(LG(SPACE))     &kp LG(J)                 &none          &kp LA(BACKSPACE)  &kp DELETE            &kp LG(ENTER)  &none
-                             &kp LEFT_SHIFT        &kp LEFT_GUI              &kp LALT       &kp LCTRL
+&none  &none          &none          &kp LG(MINUS)         &kp LG(EQUAL)             &none          &kp LG(Z)          &kp LC(LEFT_BRACKET)  &kp LS(LG(Z))  &none
+&none  &kp LG(SPACE)  &none          &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)  &kp ENTER          &kp BACKSPACE         &kp TAB        &none
+&none  &none          &kp LG(SPACE)  &kp LS(LG(SPACE))     &kp LG(J)                 &none          &kp LA(BACKSPACE)  &kp DELETE            &kp LG(ENTER)  &none
+                                     &kp LEFT_SHIFT        &kp LEFT_GUI              &kp LALT       &kp LCTRL
             >;
 
             label = "master";
+        };
+
+        NeoMaster {
+            label = "neomaster";
+            bindings = <
+&none      &none     &kp LG(LS(Z))  &kp LG(Z)          &kp LG(EQUAL)  &none                 &kp ENTER          &kp BSPC       &kp TAB        &none
+&sk LCTRL  &sk LALT  &sk LGUI       &sk LSHFT          &kp LG(GRAVE)  &kp LC(LEFT_BRACKET)  &sk LSHFT          &sk LGUI       &sk LALT       &sk LCTRL
+&none      &none     &kp LG(SPACE)  &kp LS(LG(SPACE))  &kp LG(J)      &kp DELETE            &kp LA(BACKSPACE)  &kp BACKSPACE  &kp LG(ENTER)  &none
+                                    &kp LEFT_SHIFT     &kp LEFT_GUI   &kp LALT              &kp LCTRL
+            >;
         };
 
         Vi {
@@ -392,10 +417,10 @@
 
         Media {
             bindings = <
-&none  &none  &none          &none          &none  &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none             &none
-&none  &none  &kp LG(MINUS)  &kp LG(EQUAL)  &none  &kp C_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_PLAY_PAUSE  &none
-&none  &none  &none          &none          &none  &none       &kp C_PREV            &kp C_NEXT            &none             &none
-                             &none          &none  &to 0       &to 0
+&none  &none  &none          &none          &none      &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none             &none
+&none  &none  &kp LG(MINUS)  &kp LG(EQUAL)  &none      &kp C_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_PLAY_PAUSE  &none
+&none  &none  &none          &none          &none      &none       &kp C_PREV            &kp C_NEXT            &none             &none
+                             &kp LG(MINUS)  &kp EQUAL  &to 0       &to 0
             >;
 
             label = "media";
