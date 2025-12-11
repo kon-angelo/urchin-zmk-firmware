@@ -316,7 +316,7 @@
 &kp Q  &kp W          &kp E          &kp R           &kp T  &kp Y        &kp U      &kp I      &kp O    &kp P
 &kp A  &tap_left 5 S  &tap_left 3 D  &tap_left 8 F   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
 &kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M      &kp COMMA  &kp DOT  &kp LEFT_SHIFT
-                                     &sk LEFT_SHIFT  &mo 1  &lt 3 ENTER  &kp SPACE
+                                     &sk LEFT_SHIFT  &mo 1  &lt 4 ENTER  &kp SPACE
             >;
         };
 
