@@ -410,9 +410,9 @@
 
         Nav {
             bindings = <
-&none      &none     &none     &none           &none           &kp LG(LS(LEFT_BRACKET))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(RIGHT_BRACKET))  &none
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LEFT                  &kp DOWN              &kp UP                 &kp RIGHT                  &kp BACKSPACE
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp HOME                  &kp PG_DN             &kp PG_UP              &kp END                    &none
+&none      &none     &none     &none           &none           &kp HOME                  &kp PAGE_DOWN         &kp PAGE_UP            &kp END          &none
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LEFT                  &kp DOWN              &kp UP                 &kp RIGHT        &kp BACKSPACE
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LS(LG(LEFT_BRACKET))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(END))  &none
                                &kp LEFT_SHIFT  &kp LEFT_SHIFT  &enter_to_0               &to 0
             >;
 
@@ -421,9 +421,9 @@
 
         Mouse {
             bindings = <
-&none      &none     &none     &none      &none  &none           &mkp LCLK       &mkp RCLK     &mkp MCLK        &none
+&none      &none     &none     &none      &none  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
 &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &none           &mkp MB1        &mkp MB2      &mkp MB3         &none
                                &none      &none  &enter_to_0     &to 0
             >;
 
