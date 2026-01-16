@@ -223,8 +223,8 @@
             require-prior-idle-ms = <200>;
         };
 
-        media_tog {
-            bindings = <&tog 10>;
+        media_tap {
+            bindings = <&mo 10>;
             key-positions = <24 23>;
             layers = <0 10>;
             timeout-ms = <30>;
@@ -267,20 +267,6 @@
             require-prior-idle-ms = <300>;
         };
 
-        master_tog {
-            bindings = <&tog 3>;
-            key-positions = <12 31 11>;
-            require-prior-idle-ms = <280>;
-            layers = <0 3>;
-        };
-
-        nav_tog {
-            bindings = <&tog 8>;
-            key-positions = <2 3 1>;
-            require-prior-idle-ms = <280>;
-            layers = <0 8>;
-        };
-
         mouse {
             bindings = <&mo 9>;
             key-positions = <23 22>;
@@ -303,6 +289,35 @@
             require-prior-idle-ms = <200>;
             layers = <0 1 2 6>;
         };
+
+        media_tog {
+            bindings = <&tog 10>;
+            key-positions = <24 23 22>;
+            layers = <0 10>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <280>;
+        };
+
+        cmd {
+            bindings = <&sk LEFT_GUI>;
+            key-positions = <26 27>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <280>;
+            layers = <0>;
+        };
+
+        altgui {
+            bindings = <&sk LA(LGUI)>;
+            key-positions = <26 27 28>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <280>;
+            layers = <0>;
+        };
+
+        meh {
+            bindings = <&sk LA(LC(LGUI))>;
+            key-positions = <26 27 28>;
+        };
     };
 
     keymap {
@@ -313,30 +328,30 @@
         Base {
             label = "base";
             bindings = <
-&kp Q  &kp W          &kp E          &kp R           &kp T  &kp Y  &kp U      &kp I      &kp O    &kp P
-&kp A  &tap_left 5 S  &tap_left 3 D  &tap_left 8 F   &kp G  &kp H  &kp J      &kp K      &kp L    &kp BACKSPACE
-&kp Z  &kp X          &kp C          &kp V           &kp B  &kp N  &kp M      &kp COMMA  &kp DOT  &kp ENTER
-                                     &sk LEFT_SHIFT  &mo 1  &mo 4  &kp SPACE
+&kp Q  &kp W          &kp E          &kp R           &kp T  &kp Y        &kp U      &kp I      &kp O    &kp P
+&kp A  &tap_left 5 S  &tap_left 3 D  &tap_left 8 F   &kp G  &kp H        &kp J      &kp K      &kp L    &kp BACKSPACE
+&kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M      &kp COMMA  &kp DOT  &kp ENTER
+                                     &sk LEFT_SHIFT  &mo 1  &lt 2 ENTER  &kp SPACE
             >;
         };
 
         sym_layer {
             label = "sym";
             bindings = <
-&kp N1     &kp N2     &kp N3    &kp N4     &kp N5          &kp N6          &kp N7     &kp N8     &kp N9    &kp N0
-&sk LCTRL  &sk LALT   &sk LGUI  &sk LSHFT  &kp LBKT        &kp RBKT        &kp MINUS  &kp EQUAL  &kp SEMI  &sk BACKSPACE
-&kp BSLH   &kp GRAVE  &kp APOS  &kp FSLH   &kp PIPE        &kp QUESTION    &kp LBKT   &kp RBKT   &kp BSLH  &kp FSLH
-                                &trans     &kp LEFT_SHIFT  &kp LEFT_SHIFT  &trans
+&kp N1     &kp N2     &kp N3    &kp N4     &kp N5          &kp N6        &kp N7     &kp N8    &kp N9         &kp N0
+&sk LCTRL  &sk LALT   &sk LGUI  &sk LSHFT  &kp LBKT        &kp RBKT      &sk RSHFT  &sk RGUI  &sk RALT       &sk RCTRL
+&kp BSLH   &kp GRAVE  &kp APOS  &kp EQUAL  &kp PIPE        &kp QUESTION  &kp MINUS  &kp SQT   &shifted SEMI  &kp FSLH
+                                &trans     &kp LEFT_SHIFT  &mo 2         &trans
             >;
         };
 
         sym_shift {
             label = "sym_shift";
             bindings = <
-&shifted N1     &shifted N2     &shifted N3    &shifted N4    &shifted N5     &shifted N6     &shifted N7     &shifted N8     &shifted N9  &shifted N0
-&kp LCTRL       &kp LALT        &kp LGUI       &kp LSHFT      &shifted LBKT   &shifted RBKT   &kp LSHFT       &kp LGUI        &kp LALT     &kp LCTRL
-&shifted COMMA  &shifted GRAVE  &shifted APOS  &shifted FSLH  &shifted N9     &shifted N0     &shifted MINUS  &shifted EQUAL  &kp SEMI     &shifted PERIOD
-                                               &trans         &kp LEFT_SHIFT  &kp LEFT_SHIFT  &trans
+&shifted N1     &shifted N2     &shifted N3    &shifted N4    &shifted N5    &shifted N6     &shifted N7     &shifted N8   &shifted N9  &shifted N0
+&kp LCTRL       &kp LALT        &kp LGUI       &kp LSHFT      &shifted LBKT  &shifted RBKT   &kp LSHFT       &kp LGUI      &kp LALT     &kp LCTRL
+&shifted COMMA  &shifted GRAVE  &shifted APOS  &shifted FSLH  &shifted N9    &shifted N0     &shifted MINUS  &shifted SQT  &kp SEMI     &shifted PERIOD
+                                               &trans         &mo 1          &kp LEFT_SHIFT  &trans
             >;
         };
 
@@ -344,7 +359,7 @@
             bindings = <
 &none  &none          &none          &kp LG(MINUS)         &kp LG(EQUAL)             &none          &kp LG(Z)          &kp LC(LEFT_BRACKET)  &kp LS(LG(Z))  &none
 &none  &kp LG(SPACE)  &none          &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)  &kp ENTER          &kp BACKSPACE         &kp TAB        &none
-&none  &none          &kp LG(SPACE)  &kp LS(LG(SPACE))     &kp LG(J)                 &none          &kp LA(BACKSPACE)  &kp DELETE            &kp LG(ENTER)  &none
+&none  &none          &kp LG(SPACE)  &kp LS(LG(SPACE))     &kp LG(LS(J))             &none          &kp LA(BACKSPACE)  &kp DELETE            &kp LG(ENTER)  &none
                                      &kp LEFT_SHIFT        &kp LEFT_GUI              &kp LALT       &kp LCTRL
             >;
 
@@ -354,7 +369,7 @@
         NeoMaster {
             label = "neomaster";
             bindings = <
-&none      &none     &kp LG(LS(Z))  &kp LG(Z)          &kp LG(EQUAL)  &none          &kp LC(LEFT_BRACKET)  &kp BSPC       &kp TAB        &none
+&none      &none     &kp LG(LS(Z))  &kp LG(Z)          &none          &none          &kp LC(LEFT_BRACKET)  &kp BSPC       &kp TAB        &none
 &sk LCTRL  &sk LALT  &sk LGUI       &sk LSHFT          &kp LG(GRAVE)  &kp LC(ENTER)  &sk LSHFT             &sk LGUI       &sk LALT       &sk LCTRL
 &none      &none     &kp LG(SPACE)  &kp LS(LG(SPACE))  &kp LG(J)      &kp DELETE     &kp LA(BACKSPACE)     &kp BACKSPACE  &kp LG(ENTER)  &none
                                     &kp LEFT_SHIFT     &kp LEFT_GUI   &kp LALT       &kp LCTRL
