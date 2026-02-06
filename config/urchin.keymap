@@ -105,7 +105,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <350>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <50>;
             flavor = "balanced";
             hold-trigger-key-positions = <16 17 7 18 28 27 26 6 8 12 13 22 23>;
             hold-trigger-on-release;
@@ -188,10 +188,10 @@
         };
 
         system_tog {
-            bindings = <&tog 11>;
+            bindings = <&tog 10>;
             key-positions = <1 11 21>;
             require-prior-idle-ms = <250>;
-            layers = <0 11>;
+            layers = <0 10>;
         };
 
         reset_base {
@@ -255,9 +255,9 @@
         };
 
         sys2 {
-            bindings = <&tog 11>;
+            bindings = <&tog 10>;
             key-positions = <8 18 28>;
-            layers = <0 11>;
+            layers = <0 10>;
         };
 
         failsafe {
@@ -320,10 +320,10 @@
         Base {
             label = "base";
             bindings = <
-&kp Q  &kp W          &tap_left 5 E  &kp R           &kp T  &kp Y        &kp U                &kp I      &kp O    &kp P
-&kp A  &tap_left 4 S  &tap_left 3 D  &tap_left 7 F   &kp G  &kp H        &kp J                &kp K      &kp L    &kp BACKSPACE
-&kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M                &kp COMMA  &kp DOT  &kp ENTER
-                                     &sk LEFT_SHIFT  &mo 1  &lt 2 ENTER  &master_key 3 SPACE
+&kp Q  &kp W          &tap_left 5 E   &kp R           &kp T  &kp Y        &kp U                &kp I      &kp O    &kp P
+&kp A  &tap_left 4 S  &tap_left 3 D   &tap_left 7 F   &kp G  &kp H        &kp J                &kp K      &kp L    &kp BACKSPACE
+&kp Z  &kp X          &tap_left 11 E  &kp V           &kp B  &kp N        &kp M                &kp COMMA  &kp DOT  &kp ENTER
+                                      &sk LEFT_SHIFT  &mo 1  &lt 2 ENTER  &master_key 3 SPACE
             >;
         };
 
@@ -392,9 +392,9 @@
 
         Nav {
             bindings = <
-&none      &none     &none     &none           &none           &kp HOME                  &kp PAGE_DOWN         &kp PAGE_UP            &kp END          &none
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LEFT                  &kp DOWN              &kp UP                 &kp RIGHT        &kp BACKSPACE
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LS(LG(LEFT_BRACKET))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(END))  &none
+&none      &none     &none     &none           &none           &kp HOME                  &kp PAGE_DOWN         &kp PAGE_UP            &kp END                    &none
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LEFT                  &kp DOWN              &kp UP                 &kp RIGHT                  &kp BACKSPACE
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LS(LG(LEFT_BRACKET))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(RIGHT_BRACKET))  &none
                                &kp LEFT_SHIFT  &kp LEFT_SHIFT  &enter_to_0               &to 0
             >;
 
@@ -423,15 +423,6 @@
             label = "media";
         };
 
-        Mod {
-            bindings = <
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &none  &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &none  &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL
-&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &none  &none  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL
-                               &none      &none  &none  &none
-            >;
-        };
-
         System {
             label = "system";
             bindings = <
@@ -439,6 +430,15 @@
 &bootloader     &none  &none  &none       &bt BT_SEL 1  &bt BT_SEL 4  &none  &none     &none  &bootloader
 &studio_unlock  &none  &none  &none       &bt BT_SEL 2  &bt BT_SEL 5  &none  &none     &none  &studio_unlock
                               &none       &none         &none         &none
+            >;
+        };
+
+        layer_11 {
+            bindings = <
+&none  &none  &none  &none  &none  &none  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none  &none
+&none  &none  &none  &none  &none  &none  &kp LBKT              &kp RBKT               &none  &kp BACKSPACE
+&none  &none  &none  &none  &none  &none  &kp LEFT_BRACE        &kp RIGHT_BRACE        &none  &none
+                     &none  &none  &none  &none
             >;
         };
     };
