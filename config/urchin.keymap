@@ -341,10 +341,10 @@
         sym_shift {
             label = "sym_shift";
             bindings = <
-&shifted N1                &shifted N2     &shifted N3    &shifted N4     &shifted N5    &shifted N6     &shifted N7     &shifted N8  &shifted N9  &shifted N0
-&kp LCTRL                  &kp LALT        &kp LGUI       &kp LSHFT       &shifted LBKT  &shifted RBKT   &kp LSHFT       &kp LGUI     &kp LALT     &kp LCTRL
-&shifted NON_US_BACKSLASH  &shifted GRAVE  &shifted APOS  &shifted EQUAL  &shifted N9    &shifted N0     &shifted MINUS  &kp SQT      &kp SEMI     &shifted SLASH
-                                                          &trans          &mo 1          &kp LEFT_SHIFT  &trans
+&shifted N1                &shifted N2     &shifted NUMBER_2  &shifted N4     &shifted N5    &shifted N6     &shifted N7     &shifted N8  &shifted N9  &shifted N0
+&kp LCTRL                  &kp LALT        &kp LGUI           &kp LSHFT       &shifted LBKT  &shifted RBKT   &kp LSHFT       &kp LGUI     &kp LALT     &kp LCTRL
+&shifted NON_US_BACKSLASH  &shifted GRAVE  &shifted APOS      &shifted EQUAL  &shifted N9    &shifted N0     &shifted MINUS  &kp SQT      &kp SEMI     &shifted SLASH
+                                                              &trans          &mo 1          &kp LEFT_SHIFT  &trans
             >;
         };
 
