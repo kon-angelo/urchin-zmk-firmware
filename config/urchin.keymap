@@ -189,10 +189,10 @@
         };
 
         system_tog {
-            bindings = <&tog 12>;
+            bindings = <&tog 11>;
             key-positions = <1 11 21>;
             require-prior-idle-ms = <250>;
-            layers = <0 12>;
+            layers = <0 11>;
         };
 
         reset_base {
@@ -201,47 +201,47 @@
         };
 
         fn_tap {
-            bindings = <&mo 7>;
+            bindings = <&mo 6>;
             key-positions = <3 2>;
-            layers = <0 7>;
+            layers = <0 6>;
             require-prior-idle-ms = <280>;
             timeout-ms = <30>;
         };
 
         fn_tog {
-            bindings = <&tog 7>;
+            bindings = <&tog 6>;
             key-positions = <3 4 2>;
-            layers = <0 7>;
+            layers = <0 6>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
         };
 
         mouse_tog {
-            bindings = <&tog 9>;
+            bindings = <&tog 8>;
             key-positions = <23 22 21>;
-            layers = <0 9>;
+            layers = <0 8>;
             timeout-ms = <80>;
             require-prior-idle-ms = <200>;
         };
 
         media_tap {
-            bindings = <&mo 10>;
+            bindings = <&mo 9>;
             key-positions = <24 23>;
-            layers = <0 10>;
+            layers = <0 9>;
             timeout-ms = <30>;
             require-prior-idle-ms = <280>;
         };
 
         num_tog {
-            bindings = <&tog 6>;
+            bindings = <&tog 5>;
             key-positions = <1 2 3>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 6>;
+            layers = <0 5>;
         };
 
         num_tap {
-            bindings = <&mo 6>;
+            bindings = <&mo 5>;
             key-positions = <1 2>;
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
@@ -256,9 +256,9 @@
         };
 
         sys2 {
-            bindings = <&tog 12>;
+            bindings = <&tog 11>;
             key-positions = <8 18 28>;
-            layers = <0 12>;
+            layers = <0 11>;
         };
 
         failsafe {
@@ -269,7 +269,7 @@
         };
 
         mouse {
-            bindings = <&mo 9>;
+            bindings = <&mo 8>;
             key-positions = <23 22>;
             timeout-ms = <50>;
             require-prior-idle-ms = <280>;
@@ -284,9 +284,9 @@
         };
 
         media_tog {
-            bindings = <&tog 10>;
+            bindings = <&tog 9>;
             key-positions = <24 23 22>;
-            layers = <0 10>;
+            layers = <0 9>;
             timeout-ms = <50>;
             require-prior-idle-ms = <280>;
         };
@@ -321,30 +321,20 @@
         Base {
             label = "base";
             bindings = <
-&kp Q  &kp W          &tap_left 6 E  &kp R           &kp T  &kp Y        &kp U                &kp I      &kp O    &kp P
-&kp A  &tap_left 6 S  &tap_left 3 D  &tap_left 8 F   &kp G  &kp H        &kp J                &kp K      &kp L    &kp BACKSPACE
+&kp Q  &kp W          &tap_left 5 E  &kp R           &kp T  &kp Y        &kp U                &kp I      &kp O    &kp P
+&kp A  &tap_left 5 S  &tap_left 2 D  &tap_left 7 F   &kp G  &kp H        &kp J                &kp K      &kp L    &kp BACKSPACE
 &kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M                &kp COMMA  &kp DOT  &kp SLASH
-                                     &sk LEFT_SHIFT  &mo 1  &lt 2 ENTER  &master_key 3 SPACE
+                                     &sk LEFT_SHIFT  &mo 1  &lt 0 ENTER  &master_key 2 SPACE
             >;
         };
 
         sym_layer {
             label = "sym";
             bindings = <
-&kp N1     &kp N2     &kp N3    &kp N4     &kp N5          &kp N6        &kp N7     &kp N8       &kp N9         &kp N0
-&sk LCTRL  &sk LALT   &sk LGUI  &sk LSHFT  &kp LBKT        &kp RBKT      &sk RSHFT  &sk RGUI     &sk RALT       &sk RCTRL
-&kp BSLH   &kp GRAVE  &kp APOS  &kp EQUAL  &kp PIPE        &kp QUESTION  &kp MINUS  &kp LS(SQT)  &shifted SEMI  &kp FSLH
-                                &trans     &kp LEFT_SHIFT  &mo 2         &trans
-            >;
-        };
-
-        layer_12 {
-            label = "foo";
-            bindings = <
-&shifted N1                &shifted N2     &shifted N3    &shifted N4     &shifted N5    &shifted N6     &shifted N7     &shifted N8  &shifted N9  &shifted N0
-&kp LCTRL                  &kp LALT        &kp LGUI       &kp LSHFT       &shifted LBKT  &shifted RBKT   &kp LSHFT       &kp LGUI     &kp LALT     &kp LCTRL
-&shifted NON_US_BACKSLASH  &shifted GRAVE  &shifted APOS  &shifted EQUAL  &shifted N9    &shifted N0     &shifted MINUS  &kp SQT      &kp SEMI     &shifted SLASH
-                                                          &trans          &mo 1          &kp LEFT_SHIFT  &trans
+&kp N1     &kp N2     &kp N3    &kp N4     &kp N5          &kp N6          &kp N7     &kp N8       &kp N9         &kp N0
+&sk LCTRL  &sk LALT   &sk LGUI  &sk LSHFT  &kp LBKT        &kp RBKT        &sk RSHFT  &sk RGUI     &sk RALT       &sk RCTRL
+&kp BSLH   &kp GRAVE  &kp APOS  &kp EQUAL  &kp PIPE        &kp QUESTION    &kp MINUS  &kp LS(SQT)  &kp SEMICOLON  &kp FSLH
+                                &trans     &sk LEFT_SHIFT  &sk LEFT_SHIFT  &trans
             >;
         };
 
