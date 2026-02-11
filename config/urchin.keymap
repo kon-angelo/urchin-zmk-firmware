@@ -322,9 +322,9 @@
             label = "base";
             bindings = <
 &kp Q  &kp W          &tap_left 5 E  &kp R           &kp T  &kp Y        &kp U                &kp I      &kp O    &kp P
-&kp A  &tap_left 5 S  &tap_left 2 D  &tap_left 7 F   &kp G  &kp H        &kp J                &kp K      &kp L    &kp BACKSPACE
+&kp A  &tap_left 4 S  &tap_left 3 D  &tap_left 7 F   &kp G  &kp H        &kp J                &kp K      &kp L    &kp BACKSPACE
 &kp Z  &kp X          &kp C          &kp V           &kp B  &kp N        &kp M                &kp COMMA  &kp DOT  &kp SLASH
-                                     &sk LEFT_SHIFT  &mo 1  &lt 1 ENTER  &master_key 2 SPACE
+                                     &sk LEFT_SHIFT  &mo 1  &lt 1 ENTER  &master_key 3 SPACE
             >;
         };
 
@@ -334,7 +334,7 @@
 &kp N1     &kp N2     &kp N3    &kp N4     &kp N5          &kp N6          &kp N7     &kp N8       &kp N9         &kp N0
 &sk LCTRL  &sk LALT   &sk LGUI  &sk LSHFT  &kp LBKT        &kp RBKT        &sk RSHFT  &sk RGUI     &sk RALT       &sk RCTRL
 &kp BSLH   &kp GRAVE  &kp APOS  &kp EQUAL  &kp PIPE        &kp QUESTION    &kp MINUS  &kp LS(SQT)  &kp SEMICOLON  &kp FSLH
-                                &trans     &sk LEFT_SHIFT  &sk LEFT_SHIFT  &trans
+                                &trans     &sk LEFT_SHIFT  &kp LEFT_SHIFT  &trans
             >;
         };
 
