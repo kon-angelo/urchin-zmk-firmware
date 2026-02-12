@@ -251,8 +251,9 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <15 16>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <30>;
+            layers = <0 1 5>;
         };
 
         sys2 {
@@ -350,10 +351,10 @@
 
         Master {
             bindings = <
-&none  &none          &none          &kp LG(MINUS)         &kp LG(EQUAL)             &kp LC(LEFT_BRACKET)  &kp LG(V)          &kp LG(C)      &kp LG(X)      &kp LG(A)
-&none  &kp LG(SPACE)  &none          &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)         &kp ENTER          &kp BACKSPACE  &kp TAB        &none
-&none  &none          &kp LG(SPACE)  &kp LS(LG(SPACE))     &kp LG(LS(J))             &none                 &kp LA(BACKSPACE)  &kp DELETE     &kp LG(ENTER)  &none
-                                     &kp LEFT_SHIFT        &kp LEFT_GUI              &kp LALT              &kp LCTRL
+&none  &none          &none          &kp LG(MINUS)         &kp LG(EQUAL)             &kp LG(A)      &kp LG(X)          &kp LG(C)      &kp LG(V)      &kp LG(A)
+&none  &kp LG(SPACE)  &none          &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)  &kp ENTER          &kp BACKSPACE  &kp TAB        &kp LC(LEFT_BRACKET)
+&none  &none          &kp LG(SPACE)  &kp LS(LG(SPACE))     &kp LG(LS(J))             &none          &kp LA(BACKSPACE)  &kp DELETE     &kp LG(ENTER)  &none
+                                     &kp LEFT_SHIFT        &kp LEFT_GUI              &kp LALT       &kp LCTRL
             >;
 
             label = "master";
