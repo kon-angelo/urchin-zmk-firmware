@@ -123,6 +123,16 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <13 12 6 7 8 16 17 18 27 28 26 9 22 23>;
         };
+
+        sk2: sk2 {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SK2";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+        };
     };
 
     macros {
@@ -332,10 +342,10 @@
         sym_layer {
             label = "sym";
             bindings = <
-&kp N1     &kp N2     &kp N3    &kp N4     &kp N5          &kp N6          &kp N7     &kp N8       &kp N9         &kp N0
-&sk LCTRL  &sk LALT   &sk LGUI  &sk LSHFT  &kp LBKT        &kp RBKT        &sk RSHFT  &sk RGUI     &sk RALT       &sk RCTRL
-&kp BSLH   &kp GRAVE  &kp APOS  &kp EQUAL  &kp PIPE        &kp QUESTION    &kp MINUS  &kp LS(SQT)  &kp SEMICOLON  &kp FSLH
-                                &trans     &sk LEFT_SHIFT  &kp LEFT_SHIFT  &trans
+&kp N1      &kp N2     &kp N3     &kp N4      &kp N5          &kp N6          &kp N7      &kp N8       &kp N9         &kp N0
+&sk2 LCTRL  &sk2 LALT  &sk2 LGUI  &sk2 LSHFT  &kp LBKT        &kp RBKT        &sk2 RSHFT  &sk2 RGUI    &sk2 RALT      &sk2 RCTRL
+&kp BSLH    &kp GRAVE  &kp APOS   &kp EQUAL   &kp PIPE        &kp QUESTION    &kp MINUS   &kp LS(SQT)  &kp SEMICOLON  &kp FSLH
+                                  &trans      &sk LEFT_SHIFT  &kp LEFT_SHIFT  &trans
             >;
         };
 
@@ -351,7 +361,7 @@
 
         Master {
             bindings = <
-&none  &none          &none          &kp LG(MINUS)         &kp LG(EQUAL)             &kp LG(A)      &kp LG(X)          &kp LG(C)      &kp LG(V)      &kp LG(A)
+&none  &none          &none          &kp LG(MINUS)         &kp LG(EQUAL)             &kp LG(A)      &kp LG(V)          &kp LG(C)      &kp LG(X)      &kp LG(A)
 &none  &kp LG(SPACE)  &none          &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)  &kp ENTER          &kp BACKSPACE  &kp TAB        &kp LC(LEFT_BRACKET)
 &none  &none          &kp LG(SPACE)  &kp LS(LG(SPACE))     &kp LG(LS(J))             &none          &kp LA(BACKSPACE)  &kp DELETE     &kp LG(ENTER)  &none
                                      &kp LEFT_SHIFT        &kp LEFT_GUI              &kp LALT       &kp LCTRL
@@ -362,7 +372,7 @@
 
         Vi {
             bindings = <
-&none  &none      &kp LC(C)  &none          &none      &sk DOUBLE_QUOTES  &kp LG(Z)              &kp LC(T)   &kp LS(LG(Z))  &none
+&none  &none      &kp LC(C)  &kp LC(C)      &none      &sk DOUBLE_QUOTES  &kp LG(Z)              &kp LC(T)   &kp LS(LG(Z))  &none
 &none  &none      &none      &kp LC(SPACE)  &kp LC(C)  &sk GRAVE          &kp LC(RIGHT_BRACKET)  &kp LC(I)   &kp LC(O)      &none
 &none  &kp LG(X)  &kp LG(C)  &kp LG(V)      &none      &none              &none                  &kp LS(F6)  &none          &none
                              &none          &none      &none              &none
