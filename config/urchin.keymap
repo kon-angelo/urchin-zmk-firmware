@@ -212,7 +212,7 @@
 
         fn_tap {
             bindings = <&mo 6>;
-            key-positions = <3 2>;
+            key-positions = <2 1>;
             layers = <0 6>;
             require-prior-idle-ms = <280>;
             timeout-ms = <30>;
@@ -220,7 +220,7 @@
 
         fn_tog {
             bindings = <&tog 6>;
-            key-positions = <3 4 2>;
+            key-positions = <3 2 1>;
             layers = <0 6>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
@@ -244,18 +244,10 @@
 
         num_tog {
             bindings = <&tog 5>;
-            key-positions = <1 2 3>;
+            key-positions = <2 3 4>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
             layers = <0 5>;
-        };
-
-        num_tap {
-            bindings = <&mo 5>;
-            key-positions = <1 2>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <200>;
-            layers = <0>;
         };
 
         tab {
@@ -281,7 +273,7 @@
 
         mouse {
             bindings = <&mo 8>;
-            key-positions = <23 22>;
+            key-positions = <22 21>;
             timeout-ms = <50>;
             require-prior-idle-ms = <280>;
             layers = <0>;
@@ -295,19 +287,11 @@
         };
 
         media_tog {
-            bindings = <&tog 9>;
-            key-positions = <24 23 22>;
+            bindings = <&tog 8>;
+            key-positions = <23 22 21>;
             layers = <0 9>;
             timeout-ms = <50>;
             require-prior-idle-ms = <280>;
-        };
-
-        cmd {
-            bindings = <&sk LEFT_GUI>;
-            key-positions = <26 27>;
-            timeout-ms = <100>;
-            require-prior-idle-ms = <280>;
-            layers = <0>;
         };
 
         altgui {
