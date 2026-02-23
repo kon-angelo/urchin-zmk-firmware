@@ -345,7 +345,7 @@
 
         Master {
             bindings = <
-&none  &none          &none          &kp LG(MINUS)         &kp LG(EQUAL)             &kp LG(A)      &kp LG(V)          &kp LG(C)      &kp LG(X)      &kp LG(A)
+&none  &none          &none          &kp LG(MINUS)         &kp LG(EQUAL)             &kp LG(A)      &kp LG(C)          &kp LG(V)      &kp LG(X)      &kp LG(A)
 &none  &kp LG(SPACE)  &none          &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)  &kp ENTER          &kp BACKSPACE  &kp TAB        &kp LC(LEFT_BRACKET)
 &none  &none          &kp LG(SPACE)  &kp LS(LG(SPACE))     &kp LG(LS(J))             &none          &kp LA(BACKSPACE)  &kp DELETE     &kp LG(ENTER)  &none
                                      &kp LEFT_SHIFT        &kp LEFT_GUI              &kp LALT       &kp LCTRL
@@ -410,10 +410,10 @@
 
         Media {
             bindings = <
-&none  &none  &none          &none          &none      &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none             &none
-&none  &none  &kp LG(MINUS)  &kp LG(EQUAL)  &none      &kp C_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_PLAY_PAUSE  &none
-&none  &none  &none          &none          &none      &none       &kp C_PREV            &kp C_NEXT            &none             &none
-                             &kp LG(MINUS)  &kp EQUAL  &to 0       &to 0
+&none  &none  &none          &none          &none      &none             &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none             &none
+&none  &none  &kp LG(MINUS)  &kp LG(EQUAL)  &none      &kp C_MUTE        &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_PLAY_PAUSE  &none
+&none  &none  &none          &none          &none      &kp C_PLAY_PAUSE  &kp C_PREV            &kp C_NEXT            &none             &none
+                             &kp LG(MINUS)  &kp EQUAL  &to 0             &to 0
             >;
 
             label = "media";
