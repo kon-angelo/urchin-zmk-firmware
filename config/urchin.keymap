@@ -279,13 +279,6 @@
             layers = <0>;
         };
 
-        backspc {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <6 7>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <200>;
-        };
-
         media_tog {
             bindings = <&tog 8>;
             key-positions = <23 22 21>;
@@ -326,9 +319,9 @@
         sym_layer {
             label = "sym";
             bindings = <
-&kp N1      &kp N2     &kp N3     &kp N4      &kp N5          &kp N6          &kp N7      &kp N8       &kp N9         &kp N0
-&sk2 LCTRL  &sk2 LALT  &sk2 LGUI  &sk2 LSHFT  &kp LBKT        &kp RBKT        &sk2 RSHFT  &sk2 RGUI    &sk2 RALT      &sk2 RCTRL
-&kp BSLH    &kp GRAVE  &kp APOS   &kp EQUAL   &kp PIPE        &kp QUESTION    &kp MINUS   &kp LS(SQT)  &kp SEMICOLON  &kp FSLH
+&kp N1      &kp N2     &kp N3     &kp N4      &kp N5          &kp N6          &kp N7      &kp N8     &kp N9         &kp N0
+&sk2 LCTRL  &sk2 LALT  &sk2 LGUI  &sk2 LSHFT  &kp LBKT        &kp RBKT        &sk2 RSHFT  &sk2 RGUI  &sk2 RALT      &sk2 RCTRL
+&kp BSLH    &kp GRAVE  &kp APOS   &kp EQUAL   &kp PIPE        &kp QUESTION    &kp MINUS   &kp SQT    &kp SEMICOLON  &kp FSLH
                                   &trans      &sk LEFT_SHIFT  &kp LEFT_SHIFT  &trans
             >;
         };
