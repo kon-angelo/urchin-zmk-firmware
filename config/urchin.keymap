@@ -343,10 +343,10 @@
 
         Master {
             bindings = <
-&none  &none          &none          &kp LG(MINUS)         &kp LG(EQUAL)             &kp LG(A)      &kp LG(C)          &kp LG(V)      &kp LG(X)      &kp LG(A)
-&none  &kp LG(SPACE)  &none          &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)  &kp ENTER          &kp BACKSPACE  &kp TAB        &kp LC(LEFT_BRACKET)
-&none  &none          &kp LG(SPACE)  &kp LS(LG(SPACE))     &kp LG(LS(J))             &none          &kp LA(BACKSPACE)  &kp DELETE     &kp LG(ENTER)  &none
-                                     &kp LEFT_SHIFT        &kp LEFT_GUI              &kp LALT       &kp LCTRL
+&none  &none          &none                 &kp LG(MINUS)         &kp LG(EQUAL)             &kp LG(A)      &kp LG(C)          &kp LG(V)      &kp LG(X)      &kp LG(A)
+&none  &kp LG(SPACE)  &kp LA(LC(LEFT_GUI))  &sk LA(LC(LEFT_GUI))  &sk LS(LA(LC(LEFT_GUI)))  &kp LG(TILDE)  &kp ENTER          &kp BACKSPACE  &kp TAB        &kp LC(LEFT_BRACKET)
+&none  &none          &kp LG(SPACE)         &kp LS(LG(SPACE))     &kp LG(LS(J))             &none          &kp LA(BACKSPACE)  &kp DELETE     &kp LG(ENTER)  &none
+                                            &kp LEFT_SHIFT        &kp LEFT_GUI              &kp LALT       &kp LCTRL
             >;
 
             label = "master";
