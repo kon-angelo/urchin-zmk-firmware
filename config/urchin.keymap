@@ -354,9 +354,9 @@
 
         Vi {
             bindings = <
-&none  &none  &kp LC(C)  &kp LC(C)      &none      &sk DOUBLE_QUOTES  &kp LG(Z)              &kp LS(LG(Z))  &kp LS(LG(Z))  &none
-&none  &none  &none      &kp LC(SPACE)  &kp LC(C)  &sk GRAVE          &kp LC(RIGHT_BRACKET)  &kp LC(I)      &kp LC(O)      &kp LC(T)
-&none  &none  &none      &kp LC(C)      &none      &none              &kp LC(LEFT_BRACKET)   &kp LS(F6)     &none          &none
+&none  &none  &kp LC(C)  &kp LC(C)      &none      &sk DOUBLE_QUOTES  &kp LG(Z)              &kp LS(LG(Z))  &kp LS(LG(Z))         &none
+&none  &none  &none      &kp LC(SPACE)  &kp LC(C)  &sk GRAVE          &kp LC(RIGHT_BRACKET)  &kp LC(I)      &kp LC(O)             &kp LC(T)
+&none  &none  &none      &kp LC(C)      &none      &none              &kp LC(C)              &kp LS(F6)     &kp LC(LEFT_BRACKET)  &none
                          &none          &none      &none              &none
             >;
 
