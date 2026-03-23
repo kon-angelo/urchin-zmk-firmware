@@ -314,9 +314,9 @@
         Base {
             label = "base";
             bindings = <
-&kp Q                  &kp W                 &tap_left 5 E         &kp R                       &kp T  &kp Y                &kp U                &kp I      &kp O            &kp P
-&kp A                  &tap_left 4 S         &tap_left 3 D         &tap_left 7 F               &kp G  &kp H                &kp J                &kp K      &kp L            &kp BACKSPACE
-&homerow_left LCTRL Z  &homerow_left LALT X  &homerow_left LGUI C  &homerow_left LEFT_SHIFT V  &kp B  &kp N                &kp M                &kp COMMA  &mt RALT PERIOD  &mt LCTRL SLASH
+&kp Q                  &kp W                 &tap_left 5 E         &kp R                       &kp T  &kp Y                &kp U                &kp I      &kp O                       &kp P
+&kp A                  &tap_left 4 S         &tap_left 3 D         &tap_left 7 F               &kp G  &kp H                &kp J                &kp K      &kp L                       &kp BACKSPACE
+&homerow_left LCTRL Z  &homerow_left LALT X  &homerow_left LGUI C  &homerow_left LEFT_SHIFT V  &kp B  &kp N                &kp M                &kp COMMA  &homerow_right RALT PERIOD  &homerow_right LCTRL SLASH
                                                                    &sk LEFT_SHIFT              &mo 1  &master_key 1 ENTER  &master_key 3 SPACE
             >;
         };
