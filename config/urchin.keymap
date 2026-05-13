@@ -204,8 +204,8 @@
             layers = <0>;
         };
 
-        enter {
-            bindings = <&kp LC(ENTER)>;
+        ctrlspace {
+            bindings = <&kp LC(SPACE)>;
             key-positions = <7 8>;
             require-prior-idle-ms = <350>;
             timeout-ms = <50>;
@@ -317,6 +317,14 @@
         mouse2 {
             bindings = <&mo 8>;
             key-positions = <23 22>;
+        };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <6 7>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <280>;
+            layers = <0>;
         };
     };
 
