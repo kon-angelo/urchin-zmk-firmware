@@ -107,7 +107,7 @@
             tapping-term-ms = <350>;
             require-prior-idle-ms = <100>;
             flavor = "balanced";
-            hold-trigger-key-positions = <16 17 7 18 28 27 26 6 8 12 13 22 23 15 5 25 14 24 4 3 2 19 11 10 21 1>;
+            hold-trigger-key-positions = <16 17 7 18 28 27 26 6 8 12 13 22 23 15 5 25 14 24 4 3 2 19 11 10 21 1 20 29 0 9>;
             hold-trigger-on-release;
         };
 
@@ -205,10 +205,11 @@
         };
 
         enter {
-            bindings = <&kp ENTER>;
-            key-positions = <6 5>;
-            require-prior-idle-ms = <280>;
+            bindings = <&kp LC(ENTER)>;
+            key-positions = <7 8>;
+            require-prior-idle-ms = <350>;
             timeout-ms = <50>;
+            layers = <0>;
         };
 
         system_tog {
@@ -327,9 +328,9 @@
         Base {
             label = "base";
             bindings = <
-&kp Q                  &tap_left_strict 8 W  &tap_left_strict 5 E  &tap_left_strict 6 R        &kp T  &kp Y                &kp U                &kp I      &kp O                       &kp P
-&kp A                  &tap_left 4 S         &tap_left 3 D         &tap_left 7 F               &kp G  &kp H                &kp J                &kp K      &kp L                       &kp BACKSPACE
-&homerow_left LCTRL Z  &homerow_left LALT X  &homerow_left LGUI C  &homerow_left LEFT_SHIFT V  &kp B  &kp N                &kp M                &kp COMMA  &homerow_right RALT PERIOD  &homerow_right LCTRL SLASH
+&kp Q                  &tap_left_strict 8 W  &tap_left_strict 5 E  &tap_left_strict 6 R        &kp T  &kp Y                &kp U                    &kp I                          &kp O                       &kp P
+&kp A                  &tap_left 4 S         &tap_left 3 D         &tap_left 7 F               &kp G  &kp H                &kp J                    &kp K                          &kp L                       &kp BACKSPACE
+&homerow_left LCTRL Z  &homerow_left LALT X  &homerow_left LGUI C  &homerow_left LEFT_SHIFT V  &kp B  &kp N                &homerow_right RSHIFT M  &homerow_right LEFT_GUI COMMA  &homerow_right RALT PERIOD  &homerow_right LCTRL SLASH
                                                                    &sk LEFT_SHIFT              &mo 1  &master_key 1 ENTER  &master_key 3 SPACE
             >;
         };
@@ -337,10 +338,10 @@
         sym_layer {
             label = "sym";
             bindings = <
-&kp N1      &kp N2     &kp N3     &kp N4      &kp N5          &kp N6          &kp N7      &kp N8     &kp N9         &kp N0
-&sk2 LCTRL  &sk2 LALT  &sk2 LGUI  &sk2 LSHFT  &kp LBKT        &kp RBKT        &sk2 RSHFT  &sk2 RGUI  &sk2 RALT      &sk2 RCTRL
-&kp BSLH    &kp GRAVE  &kp APOS   &kp EQUAL   &kp GRAVE       &kp PIPE        &kp MINUS   &kp SQT    &kp SEMICOLON  &kp FSLH
-                                  &trans      &sk LEFT_SHIFT  &kp LEFT_SHIFT  &trans
+&kp N1      &kp N2                &kp N3     &kp N4      &kp N5          &kp N6          &kp N7      &kp N8     &kp N9         &kp N0
+&sk2 LCTRL  &sk2 LALT             &sk2 LGUI  &sk2 LSHFT  &kp LBKT        &kp RBKT        &sk2 RSHFT  &sk2 RGUI  &sk2 RALT      &sk2 RCTRL
+&kp PIPE    &kp NON_US_BACKSLASH  &kp APOS   &kp EQUAL   &kp GRAVE       &kp EQUAL       &kp MINUS   &kp SQT    &kp SEMICOLON  &kp FSLH
+                                             &trans      &sk LEFT_SHIFT  &kp LEFT_SHIFT  &trans
             >;
         };
 
