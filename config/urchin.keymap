@@ -206,7 +206,7 @@
 
         ctrlspace {
             bindings = <&kp LC(SPACE)>;
-            key-positions = <7 6>;
+            key-positions = <7 8>;
             require-prior-idle-ms = <350>;
             timeout-ms = <50>;
             layers = <0>;
@@ -321,9 +321,25 @@
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <7 8>;
+            key-positions = <7 6>;
             timeout-ms = <50>;
             require-prior-idle-ms = <280>;
+            layers = <0>;
+        };
+
+        brace {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <16 7>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <280>;
+            layers = <0>;
+        };
+
+        brace2 {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <16 8>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <250>;
             layers = <0>;
         };
     };
@@ -339,7 +355,7 @@
 &kp Q                       &tap_left_strict 8 W  &tap_left_strict 5 E  &tap_left_strict 6 R        &kp T  &kp Y  &kp U                    &kp I                          &kp O                       &kp P
 &homerow_left LEFT_SHIFT A  &tap_left 4 S         &tap_left 3 D         &tap_left 7 F               &kp G  &kp H  &kp J                    &kp K                          &kp L                       &homerow_right LSHIFT BACKSPACE
 &homerow_left LCTRL Z       &homerow_left LALT X  &homerow_left LGUI C  &homerow_left LEFT_SHIFT V  &kp B  &kp N  &homerow_right RSHIFT M  &homerow_right LEFT_GUI COMMA  &homerow_right RALT PERIOD  &homerow_right LCTRL ENTER
-                                                                        &sk LEFT_SHIFT              &mo 1  &mo 1  &mt RSHIFT SPACE
+                                                                        &sk LEFT_SHIFT              &mo 1  &mo 1  &master_key 3 SPACE
             >;
         };
 
