@@ -249,7 +249,7 @@
 
         mouse_tog {
             bindings = <&tog 8>;
-            key-positions = <23 22 21>;
+            key-positions = <14 13 12>;
             layers = <0 8>;
             timeout-ms = <80>;
             require-prior-idle-ms = <200>;
@@ -302,7 +302,7 @@
 
         media_tog {
             bindings = <&tog 8>;
-            key-positions = <23 22 21>;
+            key-positions = <23 22 24>;
             layers = <0 9>;
             timeout-ms = <50>;
             require-prior-idle-ms = <280>;
@@ -336,7 +336,7 @@
 
         brace {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <16 7>;
+            key-positions = <15 6>;
             timeout-ms = <50>;
             require-prior-idle-ms = <280>;
             layers = <0>;
@@ -344,10 +344,18 @@
 
         brace2 {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <16 8>;
+            key-positions = <16 7>;
             timeout-ms = <50>;
             require-prior-idle-ms = <250>;
             layers = <0>;
+        };
+
+        bksp {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <5 6>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <250>;
+            layers = <0 1>;
         };
     };
 
@@ -431,9 +439,9 @@
 
         Nav {
             bindings = <
-&none      &none     &none     &none           &none           &kp HOME                  &kp PAGE_DOWN         &kp PAGE_UP            &kp END          &none
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LEFT                  &kp DOWN              &kp UP                 &kp RIGHT        &kp BACKSPACE
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LS(LG(LEFT_BRACKET))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(END))  &none
+&none      &none     &none     &none           &none           &kp HOME                  &kp PAGE_DOWN         &kp PAGE_UP            &kp END                    &none
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LEFT                  &kp DOWN              &kp UP                 &kp RIGHT                  &kp BACKSPACE
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none           &kp LS(LG(LEFT_BRACKET))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(RIGHT_BRACKET))  &none
                                &kp LEFT_SHIFT  &kp LEFT_SHIFT  &enter_to_0               &to 0
             >;
 
