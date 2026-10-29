@@ -19,6 +19,7 @@
 #define SYM2 4
 #define ACCENT 5
 #define SETTINGS 6
+#define MOUSE_LOCKED 12
 
 // -----------------
 
@@ -148,7 +149,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <260>;
-            require-prior-idle-ms = <119>;
+            require-prior-idle-ms = <120>;
             flavor = "balanced";
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
             hold-trigger-on-release;
@@ -367,8 +368,8 @@
         Base {
             label = "base";
             bindings = <
-&kp Q                  &tap_left_strict 8 W  &tap_left_strict 5 E  &tap_left_strict 6 R        &kp T                  &kp Y                  &kp U                    &kp I                          &kp O                       &kp P
-&kp A                  &tap_left 4 S         &tap_left 3 D         &tap_left 7 F               &kp G                  &kp H                  &kp J                    &kp K                          &kp L                       &kp BACKSPACE
+&kp Q                  &kp W                 &tap_left_strict 5 E  &tap_left_strict 6 R        &kp T                  &kp Y                  &kp U                    &kp I                          &kp O                       &kp P
+&kp A                  &tap_left 4 S         &tap_left 3 D         &tap_left 7 F               &tap_left_strict 8 G   &kp H                  &kp J                    &kp K                          &kp L                       &kp BACKSPACE
 &homerow_left LCTRL Z  &homerow_left LALT X  &homerow_left LGUI C  &homerow_left LEFT_SHIFT V  &homerow_left LCTRL B  &homerow_left LCTRL N  &homerow_right RSHIFT M  &homerow_right LEFT_GUI COMMA  &homerow_right RALT PERIOD  &homerow_right LCTRL SLASH
                                                                    &sk LEFT_SHIFT              &mo 1                  &master_key 1 ENTER    &master_key 3 SPACE
             >;
@@ -450,10 +451,10 @@
 
         Mouse {
             bindings = <
-&none      &none     &none     &none      &none  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &none           &mkp MB1        &mkp MB2      &mkp MB3         &none
-                               &none      &none  &enter_to_0     &to 0
+&none      &none     &none     &none      &none             &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none             &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none             &none           &mkp MB1        &mkp MB2      &mkp MB3         &none
+                               &none      &to MOUSE_LOCKED  &enter_to_0     &to 0
             >;
 
             label = "mouse";
@@ -486,6 +487,19 @@
 &bootloader     &none  &none  &none       &bt BT_SEL 1  &bt BT_SEL 4  &none  &none     &none  &bootloader
 &studio_unlock  &none  &none  &none       &bt BT_SEL 2  &bt BT_SEL 5  &none  &none     &none  &studio_unlock
                               &none       &none         &none         &none
+            >;
+        };
+
+        // A separate layer keeps the lock active when the original &mo 8 is released.
+        // Keep mouse controls in sync with Mouse; the inner left thumb returns to Base.
+
+        MouseLocked {
+            label = "mouse locked";
+            bindings = <
+&none      &none     &none     &none      &none     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none     &none           &mkp MB1        &mkp MB2      &mkp MB3         &none
+                               &none      &to BASE  &enter_to_0     &to 0
             >;
         };
     };
