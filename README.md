@@ -8,9 +8,15 @@ Firmware for: [Urchin Keyboard](https://github.com/duckyb/urchin)
 **Do you want to download my keymap?**  
 
 > [!IMPORTANT]
-> My firmware only matches the following diagram if the operating system is set to "Italian" keyboard input.
+> The diagram below shows the original upstream Italian-input layout. This fork's layout has since diverged; see [`config/urchin.keymap`](./config/urchin.keymap) for the current bindings.
 
-[Download the firmware zip from the latest action run.](https://github.com/duckyb/zmk-urchin/actions/workflows/build.yml?query=is%3Asuccess+branch%3Amaster) Check [the ZMK docs](https://zmk.dev/docs/user-setup#installing-the-firmware) for instructions on how to flash it.
+[Download the firmware zip from the latest action run.](https://github.com/kon-angelo/urchin-zmk-firmware/actions/workflows/build.yml?query=is%3Asuccess+branch%3Amain) Check [the ZMK docs](https://zmk.dev/docs/user-setup#installing-the-firmware) for instructions on how to flash it.
+
+## Firmware versions and Bluetooth
+
+- ZMK and its reusable build workflow are pinned to `v0.3.0`, the latest stable release checked on 2026-10-29. Update `config/west.yml` and `.github/workflows/build.yml` together when upgrading.
+- `nice-view-gem` is pinned to its matching `v0.3.0` release. Its `main` branch targets ZMK `main` / Zephyr 4.1+; see the [module's compatibility notes](https://github.com/M165437/nice-view-gem#usage).
+- `config/urchin.conf` sets Bluetooth transmit power to **+8 dBm**, the maximum supported by the nice!nano v2's nRF52840. Flash the corresponding left and right firmware to apply it to both halves. Higher transmit power increases radio power consumption; actual range also depends on the host, antenna placement, and interference.
 
 ## Keymap Cheat Sheet
 
