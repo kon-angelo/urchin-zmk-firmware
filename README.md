@@ -17,6 +17,63 @@ Firmware for: [Urchin Keyboard](https://github.com/duckyb/urchin)
 - ZMK and its reusable build workflow are pinned to `v0.3.0`, the latest stable release checked on 2026-10-29. Update `config/west.yml` and `.github/workflows/build.yml` together when upgrading.
 - `nice-view-gem` is pinned to its matching `v0.3.0` release. Its `main` branch targets ZMK `main` / Zephyr 4.1+; see the [module's compatibility notes](https://github.com/M165437/nice-view-gem#usage).
 - `config/urchin.conf` sets Bluetooth transmit power to **+8 dBm**, the maximum supported by the nice!nano v2's nRF52840. Flash the corresponding left and right firmware to apply it to both halves. Higher transmit power increases radio power consumption; actual range also depends on the host, antenna placement, and interference.
+- Three host profiles (**0–2**) are available. The central build sets
+  `CONFIG_BT_MAX_CONN=4` and `CONFIG_BT_MAX_PAIRED=4`: three host slots plus the
+  right-half connection. The peripheral uses one connection/pairing slot.
+- Studio is enabled on the left half with locking disabled. After flashing a
+  source-keymap update, use **Restore Stock Settings** in Studio to activate it.
+
+## Current layout
+
+The keymap includes the fixes and locked layers from
+[`temper-zmkstudio` (kb3)](https://github.com/kon-angelo/temper-zmkstudio), adapted
+to Urchin's 34 keys. Base thumbs, from left to right:
+
+| Thumb | Tap / press | Hold |
+| --- | --- | --- |
+| Left outer | Sticky Shift | System (after 200 ms) |
+| Left inner | Sym layer | Sym layer |
+| Right inner | Enter | Original Temper Symbols |
+| Right outer | Space | Master |
+
+- Hold **T** for Numpad and **R** for FN; E is a plain letter. **S / D / F / G**
+  still hold Vi / Master / Nav / Mouse.
+- On Mouse, Numpad, or FN, press the **left inner thumb** to enter its dedicated
+  locked layer. It stays active after releasing G/T/R. Press that thumb again
+  to return to Base. Numpad's sticky Shift is on the left outer thumb.
+- Bottom-row modifier holds are **tap-preferred**, with 350 ms left / 280 ms
+  right timing. N uses the right-hand behavior and opposite-hand hold triggers.
+  Letter-key layer holds and Enter/Space thumb holds remain balanced.
+- The extra Symbols layer restores Temper's left-hand symbols (`{ & * ( }`,
+  `: $ % ^ +`, `~ ! @ # |`) and right-hand modifiers. Its left thumbs are
+  right parenthesis and underscore; left parenthesis is also at the R position.
+  In Sym, holding the left outer thumb opens the existing Shifted layer.
+
+### System and Bluetooth controls
+
+Hold the left outer thumb, or toggle System with **W+S+X** / **O+L+period**.
+Then **T / G / B** selects host profile **0 / 1 / 2**, **R** clears the currently
+selected host pairing, and **I** invokes the modifier-reset macro. **Q / A / P**
+or the home-row Backspace key enters the bootloader. Z/slash retains the manual
+Studio unlock action. The right outer thumb returns to Base; the left outer
+thumb cycles profiles when System was entered using a toggle combo.
+
+### Combo corrections
+
+- **C+V+B** toggles Media (9), matching its Base/Media layer filter.
+- **M+comma+period** is sticky Alt+GUI on Base and sticky Alt+Ctrl+GUI on Master;
+  the two actions have disjoint layer scopes.
+- The alternate **C+V** Mouse hold only applies on Base.
+- **H+J** Tab also works on Numpad Locked.
+- **Q+W+E+R** always returns to Base. The Space/Enter return macros also target
+  Base; selecting a Bluetooth profile then clearing it is equivalent to the
+  original Temper profile-clear macros.
+
+Layer order is Base, Sym, Shifted, Master, Vi, Numpad, FN, Nav, Mouse, Media,
+Mod, System, Mouse Locked, Numpad Locked, FN Locked, Symbols (0–15).
+
+The pre-port revision is preserved on
+[`backup/pre-temper-port-2026-11-03`](https://github.com/kon-angelo/urchin-zmk-firmware/tree/backup/pre-temper-port-2026-11-03).
 
 ## Keymap Cheat Sheet
 
