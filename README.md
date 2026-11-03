@@ -31,9 +31,9 @@ to Urchin's 34 keys. Base thumbs, from left to right:
 
 | Thumb | Tap / press | Hold |
 | --- | --- | --- |
-| Left outer | Sticky Shift | System (after 200 ms) |
+| Left outer | Sticky Shift | Shift |
 | Left inner | Sym layer | Sym layer |
-| Right inner | Enter | Original Temper Symbols |
+| Right inner | Enter | Sym |
 | Right outer | Space | Master |
 
 - Hold **T** for Numpad and **R** for FN; E is a plain letter. **S / D / F / G**
@@ -41,17 +41,19 @@ to Urchin's 34 keys. Base thumbs, from left to right:
 - On Mouse, Numpad, or FN, press the **left inner thumb** to enter its dedicated
   locked layer. It stays active after releasing G/T/R. Press that thumb again
   to return to Base. Numpad's sticky Shift is on the left outer thumb.
+- On Nav, the **left inner thumb** enters Nav Locked. Both left thumbs provide
+  Shift while locked; the right inner thumb returns to Base and sends Enter,
+  and the right outer thumb returns to Base.
 - Bottom-row modifier holds are **tap-preferred**, with 350 ms left / 280 ms
   right timing. N uses the right-hand behavior and opposite-hand hold triggers.
   Letter-key layer holds and Enter/Space thumb holds remain balanced.
-- The extra Symbols layer restores Temper's left-hand symbols (`{ & * ( }`,
-  `: $ % ^ +`, `~ ! @ # |`) and right-hand modifiers. Its left thumbs are
-  right parenthesis and underscore; left parenthesis is also at the R position.
-  In Sym, holding the left outer thumb opens the existing Shifted layer.
+- In Sym, holding the left outer thumb opens the existing Shifted layer. The
+  v0.2.8 Sym bindings include non-US backslash on Z's position and right/left
+  brackets on C/V; Nav Locked occupies the former extra Symbols slot.
 
 ### System and Bluetooth controls
 
-Hold the left outer thumb, or toggle System with **W+S+X** / **O+L+period**.
+Toggle System with **W+S+X** / **O+L+period**.
 Then **T / G / B** selects host profile **0 / 1 / 2**, **R** clears the currently
 selected host pairing, and **I** invokes the modifier-reset macro. **Q / A / P**
 or the home-row Backspace key enters the bootloader. Z/slash retains the manual
@@ -69,8 +71,10 @@ thumb cycles profiles when System was entered using a toggle combo.
   Base; selecting a Bluetooth profile then clearing it is equivalent to the
   original Temper profile-clear macros.
 
-Layer order is Base, Sym, Shifted, Master, Vi, Numpad, FN, Nav, Mouse, Media,
-Mod, System, Mouse Locked, Numpad Locked, FN Locked, Symbols (0–15).
+Layer order is Base (0), Sym (1), Shifted (2), Master (3), Vi (4), Numpad (5),
+FN (6), Nav (7), Mouse (8), Media (9), System (10), Mouse Locked (11),
+Numpad Locked (12), FN Locked (13), and Nav Locked (14). Mod has been removed;
+all lock bindings and combo layer filters use the renumbered layers.
 
 The pre-port revision is preserved on
 [`backup/pre-temper-port-2026-11-03`](https://github.com/kon-angelo/urchin-zmk-firmware/tree/backup/pre-temper-port-2026-11-03).

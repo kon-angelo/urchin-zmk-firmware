@@ -22,12 +22,11 @@
 #define NAV 7
 #define MOUSE 8
 #define MEDIA 9
-#define MODIFIERS 10
-#define SYSTEM 11
-#define MOUSE_LOCKED 12
-#define NUMPAD_LOCKED 13
-#define FN_LOCKED 14
-#define SYMBOLS 15
+#define SYSTEM 10
+#define MOUSE_LOCKED 11
+#define NUMPAD_LOCKED 12
+#define FN_LOCKED 13
+#define NAV_LOCKED 14
 
 // -----------------
 
@@ -241,10 +240,10 @@
         };
 
         system_tog {
-            bindings = <&tog 11>;
+            bindings = <&tog 10>;
             key-positions = <1 11 21>;
             require-prior-idle-ms = <250>;
-            layers = <0 11>;
+            layers = <0 10>;
         };
 
         reset_base {
@@ -297,13 +296,13 @@
             key-positions = <15 16>;
             timeout-ms = <100>;
             require-prior-idle-ms = <30>;
-            layers = <0 1 5 13>;
+            layers = <0 1 5 12>;
         };
 
         sys2 {
-            bindings = <&tog 11>;
+            bindings = <&tog 10>;
             key-positions = <8 18 28>;
-            layers = <0 11>;
+            layers = <0 10>;
         };
 
         failsafe {
@@ -444,7 +443,7 @@
 &none      &none     &none     &none           &none   &none        &kp N7     &kp N8  &kp N9  &kp N0
 &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none   &kp DOT      &kp N4     &kp N5  &kp N6  &kp BSPC
 &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none   &kp COMMA    &kp N1     &kp N2  &kp N3  &kp ENTER
-                               &sk LEFT_SHIFT  &to 13  &enter_to_0  &spc_to_0
+                               &sk LEFT_SHIFT  &to 12  &enter_to_0  &spc_to_0
             >;
 
             label = "numpad";
@@ -456,7 +455,7 @@
 &none      &none     &none     &none      &none   &none  &kp F7  &kp F8  &kp F9  &kp F12
 &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none   &none  &kp F4  &kp F5  &kp F6  &kp F11
 &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none   &none  &kp F1  &kp F2  &kp F3  &kp F10
-                               &none      &to 14  &to 0  &to 0
+                               &none      &to 13  &to 0  &to 0
             >;
         };
 
@@ -465,7 +464,7 @@
 &none      &none     &none     &none           &none   &kp HOME                  &kp PAGE_DOWN         &kp PAGE_UP            &kp END                    &none
 &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none   &kp LEFT                  &kp DOWN              &kp UP                 &kp RIGHT                  &kp BACKSPACE
 &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT       &none   &kp LS(LG(LEFT_BRACKET))  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(RIGHT_BRACKET))  &none
-                               &kp LEFT_SHIFT  &to 15  &enter_to_0               &to 0
+                               &kp LEFT_SHIFT  &to 14  &enter_to_0               &to 0
             >;
 
             label = "nav";
@@ -476,7 +475,7 @@
 &none      &none     &none     &none      &none   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
 &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
 &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none   &none           &mkp MB1        &mkp MB2      &mkp MB3         &none
-                               &none      &to 12  &enter_to_0     &to 0
+                               &none      &to 11  &enter_to_0     &to 0
             >;
 
             label = "mouse";
@@ -491,15 +490,6 @@
             >;
 
             label = "media";
-        };
-
-        Mod {
-            bindings = <
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &none  &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL
-&kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none  &none  &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL
-&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &none  &none  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL
-                               &none      &none  &none  &none
-            >;
         };
 
         System {
